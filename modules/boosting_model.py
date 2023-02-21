@@ -113,26 +113,6 @@ class Boosting:
         )
         self._model = boosting_model
 
-    def _save_model(self, model_path: str) -> None:
-        """모델 save 함수(내부)
-        chk_and_make_chr을 통해 model_path가 존재하는지 확인하고 경로를 만듬
-        그 위치에 모델 저장
-        """
-        chk_and_make_dir(model_path)
-        self._model.save(model_path)
-
-    def save_model(self, model_path: str = None) -> None:
-        """모델 save 함수
-        현재 시간 + model로 model_path 혹은 _config["path"]["output"]의 위치에 저장
-        """
-        current_dt = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self._model_path = model_path
-        if self._model_path is None:
-            self._model_path = os.path.join(
-                self._config["path"]["output"], current_dt, "model"
-            )
-        self._save_model(self._model_path)
-
     def predict(self, input_data: list) -> list:
         """모델 predict 함수
 
