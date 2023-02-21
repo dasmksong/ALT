@@ -1,0 +1,6 @@
+[INFO:main:2023/02/22 01:26:53] Program Start
+[INFO:main:2023/02/22 01:26:53] {'log': {'path': 'logs/'}, 'path': {'data': 'data/', 'output': 'output/'}, 'model': {'batch_size': 'None', 'epochs': 1}, 'hyper_parameter': {'dense1_units': 10, 'lr': 0.001, 'batch_size': 1, 'epochs': 1000, 'early_stopping_rounds': 10}, 'drop_col': {'drop_col_list': ['기준년도', '가입자 일련번호', '데이터 공개일자', '총 콜레스테롤', '트리글리세라이드', 'HDL 콜레스테롤', 'LDL 콜레스테롤', '치아우식증유무', '치석', '시력(우)', '청력(우)', '수축기 혈압', '허리둘레']}, 'log_trans': {'log_trans_col_list': ['(혈청지오티)AST', '(혈청지오티)ALT', '감마 지티피', '식전혈당(공복혈당)'], 'log1p_trans_col_list': ['혈청크레아티닌']}, 'target': {'ols': '"(혈청지오티)ALT"', 'classification': '"요단백"'}}
+[INFO:Preprocess:2023/02/22 01:26:55] Model Data Count-------------------------------------
+[INFO:Preprocess:2023/02/22 01:26:55] raw dataset        : 1000000
+[INFO:Preprocess:2023/02/22 01:26:55] preprocessed dataset  : 986986
+[INFO:Preprocess:2023/02/22 01:26:55] -----------------------------------------------------
