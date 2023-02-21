@@ -143,11 +143,7 @@ class Bagging:
         self.ols()
 
     def fit_and_predict_test(self):
-        """데이터 분리, 모델 빌드, 모델 적용 및 evaluation, 모델 저장, test_input에 대한 predict 수행 함수
-
-        return:
-            Any : 모델의 predict 결과 return
-        """
+        """데이터 분리, 모델 빌드, 모델 적용 및 evaluation, 모델 저장, test_input에 대한 predict, evaluate 수행"""
         self._do_trans_proteinuria()
         self._split_data()
         self._build_model()
