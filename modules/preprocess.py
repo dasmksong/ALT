@@ -136,7 +136,6 @@ class Preprocess:
 
         Args:
             self (Preprocess) :
-            value (pd.DataFrame) : 변경할 데이터 프레임
 
         """
         raw_df = self._data
