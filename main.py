@@ -34,3 +34,4 @@ if __name__ == "__main__":
     model.fit_and_predict_test()
 
     model = Boosting(preprocessed_data)
+    model.fit_and_predict_test()

@@ -102,9 +102,10 @@ class Boosting:
         dtrain = xgb.DMatrix(data=self._train_input, label=self._train_target)
         dtest = xgb.DMatrix(data=self._test_input, label=self._test_target)
         wlist = [(dtrain, "train"), (dtest, "eval")]
+        self._dtest = dtest
 
         params = self._config["boosting"]
-
+        print(params)
         boosting_model = xgb.train(
             params=params,
             dtrain=dtrain,
@@ -113,7 +114,7 @@ class Boosting:
         )
         self._model = boosting_model
 
-    def predict(self, input_data: list) -> list:
+    def predict(self, input_data) -> list:
         """모델 predict 함수
 
         Args :
@@ -123,6 +124,7 @@ class Boosting:
             list : 모델이 입력 데이터를 기반으로 예측한 데이터
         """
         pred = self._model.predict(input_data)
+        pred = [1 if x > 0.5 else 0 for x in pred]
         self._pred_array = pred
         return pred
 
@@ -152,5 +154,5 @@ class Boosting:
         self._do_trans_proteinuria()
         self._split_data()
         self._build_model()
-        self.predict(self._test_input)
+        self.predict(self._dtest)
         self.evaluate_model()
